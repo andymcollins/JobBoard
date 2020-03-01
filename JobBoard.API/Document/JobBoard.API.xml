@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>JobBoard.API</name>
+    </assembly>
+    <members>
+        <member name="M:JobBoard.API.Controllers.JobBoardController.GetJobsAsync(System.Int32,System.Int32,System.String)">
+            <summary>
+            Retrieves Jobs
+            </summary>
+            <param name="pageSize">Page size</param>
+            <param name="pageNumber">Page number</param>
+            <param name="location">Location</param>
+            <returns>A response with Jobs </returns>
+            <response code="200">Returns current Jobs</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:JobBoard.API.Controllers.JobBoardController.GetJobAsync(System.Int32)">
+            <summary>
+            Retrieves a Job by ID
+            </summary>
+            <param name="id">Job id</param>
+            <returns>A response with Job</returns>
+            <response code="200">Returns the Job</response>
+            <response code="404">If job does not exists</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+        <member name="M:JobBoard.API.Controllers.JobBoardController.PostJobAsync(JobBoard.API.Models.PostJobRequest)">
+            <summary>
+            Creates a new Job
+            </summary>
+            <param name="request">Request model</param>
+            <returns>A response with new Job</returns>
+            <response code="201">A response as creation of Job</response>
+            <response code="400">For bad request</response>
+            <response code="500">If there was an internal server error</response>
+        </member>
+    </members>
+</doc>
