@@ -1,21 +1,53 @@
-# Job Board API
 
-Needs SQL Server 
+# Demo JobBoard API
 
-* Start SQL In Docker
+  
+Demo C# API for accessing SQL Server DB
+
+  
+## Getting Started
+
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+  
+### Prerequisites
+
+  
+What things you need to install the software and how to install them
+
+
+> SQL Server
+  
+
+### Installing
+
+  
+
+A step by step series of examples that tell you how to get a development env running
+
+  
+Run SQL in Docker
+
+```
 docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest
+```
 
 
-* Create Schema and Empty Job Table
+Add Database called ' JobBoard'
+
+
+Add JobBoard Schema
+
+```
 CREATE SCHEMA JobBoard;
 GO
+```
+  Add JobBoard  Table
+```
 
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
 CREATE TABLE [JobBoard].[Job](
-	[JobID] [int] NULL,
+    [JobID] [int] NULL,
 	[location] [nvarchar](200) NULL,
 	[JobTitle] [nvarchar](100) NULL,
 	[CompanyID] [int] NULL,
@@ -26,3 +58,13 @@ CREATE TABLE [JobBoard].[Job](
 	[DateExpires] [datetime2](7) NULL
 ) ON [PRIMARY]
 GO
+```
+
+
+## Swagger
+
+ https://localhost:5001/swagger/index.html
+ 
+## Author
+ 
+ **Andy Collins**
